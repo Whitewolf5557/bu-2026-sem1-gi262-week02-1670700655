@@ -10,8 +10,8 @@ namespace Assignment
     {
         public void Start()
         {
-            AS01_RandomItemDrop();
-            // AS02_NestedLoopForCreate2DMap();
+            //AS01_RandomItemDrop();
+            AS02_NestedLoopForCreate2DMap();
             // AS03_NestedLoopForMakingWallAround();
             // AS04_AttackEnemy();
             // AS05_DynamicIterationLoop();
@@ -111,7 +111,21 @@ namespace Assignment
         public int as02_rows;
         public void AS02_NestedLoopForCreate2DMap()
         {
-            throw new NotImplementedException();
+            for (int y = 0; y < as02_rows; y++)
+            {
+                for (int x = 0; x < as02_columns; x++)
+                {
+                    int randomIndex = UnityEngine.Random.Range(0, as02_floorTiles.Length);
+                    GameObject obj = as02_floorTiles[randomIndex];
+                    GameObject tile = Instantiate(
+                        obj,
+                        new Vector2(x, y),
+                        transform.rotation
+                        );
+                    Console.WriteLine(tile.name);
+                }
+                Console.WriteLine();
+            }
         }
 
         /*
