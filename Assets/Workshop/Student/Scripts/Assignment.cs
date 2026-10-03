@@ -12,8 +12,8 @@ namespace Assignment
         {
             //AS01_RandomItemDrop();
             //AS02_NestedLoopForCreate2DMap();
-            AS03_NestedLoopForMakingWallAround();
-            // AS04_AttackEnemy();
+            //AS03_NestedLoopForMakingWallAround();
+            AS04_AttackEnemy();
             // AS05_DynamicIterationLoop();
             // AS06_WhileLoopAndArray();
             // AS07_HealTargetAtIndex();
@@ -263,7 +263,14 @@ namespace Assignment
         public int as04_target;
         public void AS04_AttackEnemy()
         {
-            throw new NotImplementedException();
+            as04_enemyHP[0] -= as04_damage;
+            Debug.Log($"FirstEnemy hp : {as04_enemyHP[0]}");
+
+            as04_enemyHP[as04_enemyHP.Length - 1] -= as04_damage;
+            Debug.Log($"LastEnemy hp : {as04_enemyHP[as04_enemyHP.Length - 1]}");
+
+            as04_enemyHP[as04_target] -= as04_damage;
+            Debug.Log($"TargetEnemy {as04_target} hp : {as04_enemyHP[as04_target]}");
         }
 
         /*
