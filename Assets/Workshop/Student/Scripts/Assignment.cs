@@ -21,8 +21,8 @@ namespace Assignment
             //AS09_MultiplicationTable();
             //AS10_FindSummationFromZeroToNUsingWhileLoop();
             //AS11_SpawnEnemies();
-            StartCoroutine(AS12_CountTime());
-            // AS13_SumOfNumbersInRow();
+            //StartCoroutine(AS12_CountTime());
+            AS13_SumOfNumbersInRow();
             // AS14_SumOfNumbersInColumn();
             // AS15_MakeTheTriangle();
             // AS16_MultiplicationTableOf_2_3_and_4();
@@ -617,7 +617,13 @@ namespace Assignment
         public void AS13_SumOfNumbersInRow()
         {
             var matrix = as13_matrix.Get2DArray();
-            throw new NotImplementedException();
+
+            int sum = 0;
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                sum += matrix[as13_row, col];
+            }
+            Debug.Log($"Row {as13_row} = {sum}");
         }
 
         /*
