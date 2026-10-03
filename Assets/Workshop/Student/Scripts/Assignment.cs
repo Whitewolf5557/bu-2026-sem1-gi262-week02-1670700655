@@ -16,8 +16,8 @@ namespace Assignment
             //AS04_AttackEnemy();
             //AS05_DynamicIterationLoop();
             //AS06_WhileLoopAndArray();
-            AS07_HealTargetAtIndex();
-            // AS08_RandomPickingDialogue();
+            //AS07_HealTargetAtIndex();
+            AS08_RandomPickingDialogue();
             // AS09_MultiplicationTable();
             // AS10_FindSummationFromZeroToNUsingWhileLoop();
             // AS11_SpawnEnemies();
@@ -435,7 +435,8 @@ namespace Assignment
         public string[] as08_dialogues;
         public void AS08_RandomPickingDialogue()
         {
-            throw new NotImplementedException();
+            int r = UnityEngine.Random.Range(0, as08_dialogues.Length);
+            Debug.Log(as08_dialogues[r]);
         }
 
         /*
