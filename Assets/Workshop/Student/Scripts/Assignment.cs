@@ -11,8 +11,8 @@ namespace Assignment
         public void Start()
         {
             //AS01_RandomItemDrop();
-            AS02_NestedLoopForCreate2DMap();
-            // AS03_NestedLoopForMakingWallAround();
+            //AS02_NestedLoopForCreate2DMap();
+            AS03_NestedLoopForMakingWallAround();
             // AS04_AttackEnemy();
             // AS05_DynamicIterationLoop();
             // AS06_WhileLoopAndArray();
@@ -219,7 +219,16 @@ namespace Assignment
         public int as03_rows;
         public void AS03_NestedLoopForMakingWallAround()
         {
-            throw new NotImplementedException();
+            for (int x = -1; x <= as03_columns; x++)
+            {
+                for (int y = -1; y <= as03_rows; y++)
+                {
+                    if (x == -1 || x == as03_columns || y == -1 || y == as03_rows)
+                    {
+                        Instantiate(as03_wall, new Vector2(x, y), transform.rotation);
+                    }
+                }
+            }
         }
 
         /*
