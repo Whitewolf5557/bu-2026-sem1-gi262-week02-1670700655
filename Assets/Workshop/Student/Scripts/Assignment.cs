@@ -15,8 +15,8 @@ namespace Assignment
             //AS03_NestedLoopForMakingWallAround();
             //AS04_AttackEnemy();
             //AS05_DynamicIterationLoop();
-            AS06_WhileLoopAndArray();
-            // AS07_HealTargetAtIndex();
+            //AS06_WhileLoopAndArray();
+            AS07_HealTargetAtIndex();
             // AS08_RandomPickingDialogue();
             // AS09_MultiplicationTable();
             // AS10_FindSummationFromZeroToNUsingWhileLoop();
@@ -399,7 +399,16 @@ namespace Assignment
         public int as07_targetIndex;
         public void AS07_HealTargetAtIndex()
         {
-            throw new NotImplementedException();
+            as07_heroHPs[0] += as07_heal;
+            Debug.Log($"FirstHero hp : {as07_heroHPs[0]}");
+
+            as07_heroHPs[as07_heroHPs.Length - 1] += as07_heal;
+            Debug.Log($"LastHero hp : {as07_heroHPs[as07_heroHPs.Length - 1]}");
+
+            as07_heroHPs[as07_targetIndex] += as07_heal;
+            Debug.Log($"TargetHero {as07_targetIndex} hp : {as07_heroHPs[as07_targetIndex]}");
+
+
         }
 
         /*
