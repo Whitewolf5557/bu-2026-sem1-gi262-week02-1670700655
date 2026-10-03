@@ -19,8 +19,8 @@ namespace Assignment
             //AS07_HealTargetAtIndex();
             //AS08_RandomPickingDialogue();
             //AS09_MultiplicationTable();
-            AS10_FindSummationFromZeroToNUsingWhileLoop();
-            // AS11_SpawnEnemies();
+            //AS10_FindSummationFromZeroToNUsingWhileLoop();
+            AS11_SpawnEnemies();
             // StartCoroutine(AS12_CountTime());
             // AS13_SumOfNumbersInRow();
             // AS14_SumOfNumbersInColumn();
@@ -526,7 +526,14 @@ namespace Assignment
         public GameObject as11_enemyPrefab;
         public void AS11_SpawnEnemies()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < as11_enemyHPs.Length; i++)
+            {
+                Instantiate(
+                    as11_enemyPrefab,
+                    transform.position + new Vector3(i + 1, 0, 0),
+                    transform.rotation
+                );
+            }
         }
 
         /*
