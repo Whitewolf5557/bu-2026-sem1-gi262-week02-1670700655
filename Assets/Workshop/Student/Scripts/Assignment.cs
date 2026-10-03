@@ -25,8 +25,8 @@ namespace Assignment
             //AS13_SumOfNumbersInRow();
             //AS14_SumOfNumbersInColumn();
             //AS15_MakeTheTriangle();
-            AS16_MultiplicationTableOf_2_3_and_4();
-            // EX_01_TicTacToeGame_TurnPlay();
+            //AS16_MultiplicationTableOf_2_3_and_4();
+            EX_01_TicTacToeGame_TurnPlay();
 
         }
 
@@ -1017,7 +1017,86 @@ namespace Assignment
         public void EX_01_TicTacToeGame_TurnPlay()
         {
             var board = ex01_board.Get2DArray();
-            throw new NotImplementedException();
+            
+            //ตรวจสอบ Invalid move
+            if (ex01_row < 0 || ex01_row >= 3 || ex01_column < 0 || ex01_column >= 3 ||
+                !string.IsNullOrWhiteSpace(board[ex01_row, ex01_column]))
+            {
+                PrintBoard(board);
+                Debug.Log(">> Invalid move");
+                return;
+            }
+
+            //ใส่ X หรือ O
+            board[ex01_row, ex01_column] = ex01_playerTurn;
+
+            //แสดง Board
+            PrintBoard(board);
+
+            bool win = false;
+
+            //ตรวจ Row
+            if (board[ex01_row, 0] == ex01_playerTurn && 
+                board[ex01_row, 1] == ex01_playerTurn &&
+                board[ex01_row, 2] == ex01_playerTurn)
+            {
+                win = true;
+            }
+
+            //ตรวจ Column
+            if (board[0, ex01_column] == ex01_playerTurn &&
+                board[1, ex01_column] == ex01_playerTurn &&
+                board[2, ex01_column] == ex01_playerTurn)
+            {
+                win = true;
+            }
+
+            //ตรวจ Diagonal \
+            if (board[0, 0] == ex01_playerTurn &&
+                board[1, 1] == ex01_playerTurn &&
+                board[2, 2] == ex01_playerTurn)
+            {
+                win = true;
+            }
+
+            //ตรวจ Diagonal /
+            if (board[0, 2] == ex01_playerTurn &&
+                board[1, 1] == ex01_playerTurn &&
+                board[2, 0] == ex01_playerTurn)
+            {
+                win = true;
+            }
+
+            //Win
+            if (win)
+            {
+                Debug.Log($">> {ex01_playerTurn} Win!");
+                return;
+            }
+
+            //ตรวจช่องว่าง
+            bool hasEmpty = false;
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (string.IsNullOrWhiteSpace(board[i, j]))
+                    {
+                        hasEmpty = true;
+                    }
+                }
+            }
+
+            //Draw & Continue
+            if (hasEmpty)
+            {
+                Debug.Log(">> Continue");
+            }
+            else
+            {
+                Debug.Log(">> Draw");
+            }
         }
         #endregion
 

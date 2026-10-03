@@ -226,9 +226,9 @@ MonoBehaviour:
     - 
     - ' '
     - ' '
-  ex01_playerTurn: 1
-  ex01_row: 0
-  ex01_column: 2
+  ex01_playerTurn: 0
+  ex01_row: 2
+  ex01_column: 0
 --- !u!1 &652921969
 GameObject:
   m_ObjectHideFlags: 0
