@@ -18,8 +18,8 @@ namespace Assignment
             //AS06_WhileLoopAndArray();
             //AS07_HealTargetAtIndex();
             //AS08_RandomPickingDialogue();
-            AS09_MultiplicationTable();
-            // AS10_FindSummationFromZeroToNUsingWhileLoop();
+            //AS09_MultiplicationTable();
+            AS10_FindSummationFromZeroToNUsingWhileLoop();
             // AS11_SpawnEnemies();
             // StartCoroutine(AS12_CountTime());
             // AS13_SumOfNumbersInRow();
@@ -491,7 +491,15 @@ namespace Assignment
         public int as10_n;
         public void AS10_FindSummationFromZeroToNUsingWhileLoop()
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            int i = 1;
+
+            while (i < as10_n)
+            {
+                sum += i;
+                i++;
+            }
+            Debug.Log($"ผลรวมของ n จาก 1 ถึง {as10_n} คือ {sum}");
 
         }
 
